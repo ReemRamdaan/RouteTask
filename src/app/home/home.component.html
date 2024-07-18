@@ -1,0 +1,30 @@
+
+<div class="container d-flex justify-content-center align-items-center py-5 flex-column">
+    <h1 class="my-3">Customers Transactions</h1>
+    <div class="w-100 my-3 d-flex justify-content-center flex-column">
+        <input [(ngModel)]="searchTerm" type="text" class=" w-75 m-auto p-2 rounded" placeholder="Search ...">
+    </div>
+       <div class="row w-75">
+        <div class=" my-3 col-md-7">
+           
+            <table class=" text-center  mt-0 ">
+                <thead class="bg-white my-3 my-border">
+                    <tr>
+                    <th class="py-3 w-25">Name</th>
+                    <th class="py-3 w-25">Amount</th>
+                    <th class="py-3 w-25">Graph</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let customer of filteredCustomers|search:searchTerm" class="bg-white my-3 my-border">
+                        <td>{{ customer.name }}</td>
+                        <td>{{ transactionAmounts[customer.id] || 0 }}</td>
+                        <td class="py-3"><button class=" btn btn-outline-info" (click)="selectCustomer(customer.id)">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+        <div  *ngIf="customerTransaction.length!=0" class="line col-md-5 my-5 " [chart]="chart"></div>
+       </div>
+   
+    </div>  

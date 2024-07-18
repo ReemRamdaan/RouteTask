@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+body
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(196, 231, 246);
+    
+}
+.my-border
+{
+    border:solid 20px rgb(244, 247, 248);
+}
+td 
+{
+    font-size: 18px; 
+    font-weight: 500;
+}
+th
+{
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: rgb(67, 85, 85);
+}
+h1
+{
+    color: rgb(67, 85, 85);
+}
+input
+{
+    background-color: transparent;
+}
